@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <title>My Parking</title>
+
+</head>
+
+<body>
+    <div class="tab">
+        <button class="tablinks" onclick="gotoGateManTab()">GATEMAN</button>
+        <button class="tablinks" onclick="gotoAdminTab()">ADMIN</button>
+        <button class="tablinks" onclick="gotoTableTab()">TABLE</button>
+    </div>
+
+    <div id="gatemanTab" class="tabcontent">
+        <div class="topnav">
+            <a class="active">GATEMAN VIEW</a>
+        </div>
+        <div id="allSlotsForGateMan">
+        </div>
+        <div id="bookSlotModal" class="modal">
+            <div class="modal-content">
+                <span id="closebookSlotModal" class="close">&times;</span>
+                <div style="margin-top: 54px;">
+                    <label>Car Number:</label>
+                    <input type="text" id="carNumber" placeholder="Car Number..">
+                </div>
+
+                <div style="margin-bottom: 40px;">
+                    <button class="btn warn" style="float: left;" id="discard" onclick="discard()">DISCARD</button>
+                    <button class="btn primary" style="float: right;" onclick="saveBookedSlot()">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <div id="reportModal" class="modal">
+            <div class="modal-content">
+                <span id="closeReportModal" class="close">&times;</span>
+                <div id="reportTemp">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="adminTab" class="tabcontent">
+        <div class="topnav">
+            <a class="active">ADMIN VIEW</a>
+        </div>
+        <div class="grid-container3">
+            <div>
+                <button class="btn primary" id="addSlotButton" onclick="opneAddSlotModal()">ADD SLOT</button>
+                <div id="allSlotsForAdmin">
+                </div>
+            </div>
+            <div id="infoDiv">
+                <div style="margin: 128px 52px;font-weight: bold;">
+                    DROP A SLOT HERE FOR DETAILS
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="AddSlotModal" class="modal">
+            <div class="modal-content">
+                <div class="modalHead">
+                    <span id="closeAddSlotModal" class="close">&times;</span>
+                </div>
+                <div style="margin-top: 54px;">
+                    <!-- <div class="popup">
+                        <span class="popuptext" id="myPopup">invalid</span>
+                    </div> -->
+                    <label>Slot Number</label>
+                    <input type="text" id="slotNumber" placeholder="Slot Number..">
+                    <label>Rate Per Hour</label>
+                    <input type="text" id="rate" placeholder="Rate Per Hour..">
+                </div>
+                <div style="margin-bottom: 40px;">
+                    <button class="btn warn" style="float: left;" id="discard" onclick="discard()">DISCARD</button>
+                    <button class="btn primary" id="saveNewSlotButton" style="float: right;" onclick="addNewSlot()">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <div id="editSlotModal" class="modal">
+            <div class="modal-content">
+                <div class="modalHead">
+                    <span id="closeEditSlotModal" class="close">&times;</span>
+                </div>
+                <div style="margin-top: 54px;">
+
+                    <label>Slot Number</label>
+
+                    <input type="text" id="editSlotNumber" placeholder="Slot Number..">
+                    <label>Rate Per Hour</label>
+                    <input type="text" id="editRate" placeholder="Rate Per Hour..">
+                </div>
+                <div style="margin-bottom: 40px;">
+                    <button class="btn warn" style="float: left;" id="discard" onclick="discard()">DISCARD</button>
+                    <button class="btn primary" id="saveEditedSlotButton" style="float: right;" onclick="saveEditedSlot()">SAVE</button>
+                </div>
+            </div>
+        </div>
+        <div id="info" class="modal">
+        </div>
+    </div>
+    <div id="tableTab" class="tabcontent">
+        <div class="topnav">
+            <div class="grid-container2">
+                <div>
+                    <a class="active">PARKING HISTORY</a>
+                </div>
+                <div>
+                    <input type="text" name="text" class="search " id="searchKey" placeholder="Search here!" style="width: 184px;margin-left: 60%;">
+                    <button class="btn primary" style="float: right;margin-right: 10%;margin-top: 5px;" onclick="filter()"><i
+                            class="large material-icons">search</i></button>
+                </div>
+            </div>
+
+        </div>
+        <table id="historyTable">
+        </table>
+        <div id="income"></div>
+        <div style="float: right;margin-right: 68px;">
+            <button class="btn primary " style="float: left;margin-right: 24px" id="prev" onclick="prev()">
+                <<</button> <button class="btn primary" style="float: left;" id="next" onclick="next()"> >>
+            </button>
+        </div>
+    </div>
+
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <!-- <script type="text/javascript" src="http://www.pureexample.com/js/lib/jquery.ui.touch-punch.min.js"></script> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script type="text/javascript" src="app.js"></script>
+    <link rel="stylesheet" href="app.css" type="text/css" />
+</body>
+
+</html>
